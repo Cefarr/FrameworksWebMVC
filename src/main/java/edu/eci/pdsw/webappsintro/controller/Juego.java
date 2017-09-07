@@ -7,6 +7,7 @@ package edu.eci.pdsw.webappsintro.controller;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+ import java.util.Random;
 
 
 /**
@@ -17,23 +18,37 @@ import javax.faces.bean.SessionScoped;
 @ManagedBean(name = "beanEstadoAdivinanza")
 @SessionScoped
 public class Juego {
-    private int numeroAdivinar=2;
+    private int numeroAdivinar;
     private int intentosRealizados=0;
     private int premioAcumulado=100000;
     private String estado ="No ha ganado";
+    private Random rand = new Random();
+       
+    
+    public Juego(){
+        numeroAdivinar=rand.nextInt(11);
+    }
     
     public int getNumAdiv(){
+        
         return numeroAdivinar;
     }
-    public void setNumAdiv(int numeroAdivinar){
-        this.numeroAdivinar=numeroAdivinar;
+    public void setNumAdiv(int num){
+        if(num==numeroAdivinar){
+            setEstado();  
+        }else{
+            premioAcumulado-=10000;
+        }
+        
+        
+
     }
     public int getIntentos(){
         return intentosRealizados;
     }
     public void setIntentos(int intentosRealizados){
         this.intentosRealizados=intentosRealizados;
-    }
+    }   
     public int getPremio(){
         return premioAcumulado;
     }
@@ -45,12 +60,12 @@ public class Juego {
         return estado;
         
     }
-    public void setEstado(String estado){
-        this.estado=estado;
+    private void setEstado(){
+        estado="GANASTE";
     }
     public void reiniciar(){
         premioAcumulado=100000;
-        numeroAdivinar=2;
+        numeroAdivinar=0;
 
     }
     
