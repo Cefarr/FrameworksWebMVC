@@ -18,6 +18,7 @@ import javax.faces.bean.SessionScoped;
 @ManagedBean(name = "beanEstadoAdivinanza")
 @SessionScoped
 public class Juego {
+    private int numpersona=0;
     private int numeroAdivinar;
     private int intentosRealizados=0;
     private int premioAcumulado=100000;
@@ -31,7 +32,7 @@ public class Juego {
     
     public int getNumAdiv(){
         
-        return numeroAdivinar;
+        return numpersona;
     }
     public void setNumAdiv(int num){
         if(num==numeroAdivinar){
@@ -39,8 +40,6 @@ public class Juego {
         }else{
             premioAcumulado-=10000;
         }
- 
-
     }
     public int getIntentos(){
         return intentosRealizados;
