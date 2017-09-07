@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3c.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    
+    <h:body>
+        <h:form id="formulario_adivinanza">
+    
+            <p:inputText value="#{beanEstadoAdivinanza.numAdiv}"></p:inputText>
+            <p:outputLabel value="#{beanEstadoAdivinanza.intentos}"></p:outputLabel>
+            <p:outputLabel value="#{beanEstadoAdivinanza.estado}"></p:outputLabel>
+            <p:outputLabel value="#{beanEstadoAdivinanza.premio}"></p:outputLabel>
+            <p:commandButton update="formulario_adivinanza">Envio Adivinanza</p:commandButton>
+            <p:commandButton update="formulario_adivinanza" actionListener="#{beanEstadoAdivinanza.reiniciar}">Reiniciar</p:commandButton>
+        </h:form>
+    </h:body>    
+    
+   
+</html>

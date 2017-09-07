@@ -19,7 +19,7 @@ import javax.faces.bean.SessionScoped;
 public class Juego {
     private int numeroAdivinar=2;
     private int intentosRealizados=0;
-    private int premioAcumulado=1;
+    private int premioAcumulado=100000;
     private String estado ="No ha ganado";
     
     public int getNumAdiv(){
@@ -48,13 +48,8 @@ public class Juego {
     public void setEstado(String estado){
         this.estado=estado;
     }
-    
-    
-    
-    
-    
     public void reiniciar(){
-        premioAcumulado=1;
+        premioAcumulado=100000;
         numeroAdivinar=2;
 
     }
