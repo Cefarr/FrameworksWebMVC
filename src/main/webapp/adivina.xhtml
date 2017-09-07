@@ -13,10 +13,15 @@ and open the template in the editor.
         <h:form id="formulario_adivinanza">
     
             <p:inputText value="#{beanEstadoAdivinanza.numAdiv}"></p:inputText>
+            <br/>
             <p:outputLabel value="#{beanEstadoAdivinanza.intentos}"></p:outputLabel>
+            <br/>
             <p:outputLabel value="#{beanEstadoAdivinanza.estado}"></p:outputLabel>
+            <br/>
             <p:outputLabel value="#{beanEstadoAdivinanza.premio}"></p:outputLabel>
+            <br/>
             <p:commandButton update="formulario_adivinanza">Envio Adivinanza</p:commandButton>
+            <br/>
             <p:commandButton update="formulario_adivinanza" actionListener="#{beanEstadoAdivinanza.reiniciar}">Reiniciar</p:commandButton>
         </h:form>
     </h:body>    

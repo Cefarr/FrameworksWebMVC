@@ -39,8 +39,7 @@ public class Juego {
         }else{
             premioAcumulado-=10000;
         }
-        
-        
+ 
 
     }
     public int getIntentos(){
