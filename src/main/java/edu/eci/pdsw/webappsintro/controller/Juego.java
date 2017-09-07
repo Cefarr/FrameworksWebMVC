@@ -14,7 +14,7 @@ import javax.faces.bean.SessionScoped;
  * @author 2098325
  */
 
-@ManagedBean(name = "Juego")
+@ManagedBean(name = "beanEstadoAdivinanza")
 @SessionScoped
 public class Juego {
     private int numeroAdivinar=2;
