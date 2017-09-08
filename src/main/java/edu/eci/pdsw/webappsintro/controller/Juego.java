@@ -27,7 +27,7 @@ public class Juego {
        
     
     public Juego(){
-        numeroAdivinar=rand.nextInt(11);
+        numeroAdivinar=rand.nextInt(6);
     }
     
     public int getNumAdiv(){
@@ -36,8 +36,9 @@ public class Juego {
     }
     public void setNumAdiv(int num){
         if(num==numeroAdivinar){
-            setEstado();  
+            setEstado("GANASTE");  
         }else{
+            intentosRealizados+=1;
             premioAcumulado-=10000;
         }
     }
@@ -48,6 +49,9 @@ public class Juego {
         this.intentosRealizados=intentosRealizados;
     }   
     public int getPremio(){
+        if(premioAcumulado<=0){
+            reiniciar();
+        }
         return premioAcumulado;
     }
     public void setPremio(int premioAcumulado ){
@@ -58,15 +62,13 @@ public class Juego {
         return estado;
         
     }
-    private void setEstado(){
-        estado="GANASTE";
+    private void setEstado(String cambio){
+        estado=cambio;
     }
     public void reiniciar(){
+        intentosRealizados=0;
         premioAcumulado=100000;
-        numeroAdivinar=0;
-
+        numeroAdivinar=rand.nextInt(6);
+        setEstado("No ha ganado");
     }
-    
-    
-    
 }
