@@ -8,6 +8,7 @@ package edu.eci.pdsw.webappsintro.controller;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
  import java.util.Random;
+import javax.faces.bean.ApplicationScoped;
 
 
 /**
@@ -17,6 +18,7 @@ import javax.faces.bean.SessionScoped;
 
 @ManagedBean(name = "beanEstadoAdivinanza")
 @SessionScoped
+//@ApplicationScoped
 public class Juego {
     private int numpersona=0;
     private int numeroAdivinar;
